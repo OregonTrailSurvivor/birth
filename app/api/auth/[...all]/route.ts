@@ -1,4 +1,4 @@
-import { createAuthClient } from "better-auth/react"
-export const authClient = createAuthClient({
-    baseURL: "http://localhost:3000"
-})
+import { auth } from "@/app/lib/auth"; // path to your auth file
+import { toNextJsHandler } from "better-auth/next-js";
+
+export const { POST, GET } = toNextJsHandler(auth);
