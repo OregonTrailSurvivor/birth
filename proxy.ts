@@ -3,7 +3,7 @@ import {NextRequest, NextResponse} from "next/server";
 const protectedRoutes = ["/dashboard", "/profile", "/settings"];
 const publicRoutes = ["/login", "/register", "/forgot-password"];
 
-export function middleware(req: NextRequest) {
+export function proxy(req: NextRequest) {
   const { pathname } = req.nextUrl;
   const isProtectedRoute = protectedRoutes.some((route) => pathname.startsWith(route));
   const isPublicRoute = publicRoutes.some((route) => pathname.startsWith(route));
